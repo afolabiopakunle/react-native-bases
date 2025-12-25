@@ -1,13 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, useColorScheme, View} from 'react-native'
 import {Link} from "expo-router";
+import ThemedView from "../components/ThemedView";
+import ThemedText from "../components/ThemedText";
 
 const Contact = () => {
+    const theme = useColorScheme()
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Contact Page</Text>
-            <Link style={styles.link} href="/about">About Page</Link>
-            <Link style={styles.link} href="/">Home</Link>
-        </View>
+        <ThemedView style={styles.container}>
+            <ThemedText style={styles.title}>Contact Page</ThemedText>
+            <Link style={[styles.link, {borderColor: theme === 'dark' ? 'white' : '#333'}]} href="/about"><ThemedText>About Page</ThemedText></Link>
+            <Link style={[styles.link, {borderColor: theme === 'dark' ? 'white' : '#333'}]} href="/"><ThemedText>Home</ThemedText></Link>
+        </ThemedView>
     )
 }
 export default Contact
