@@ -16,8 +16,8 @@ const Home = () => {
             <Spacer height={10} />
             <ThemedText>Index <Text style={{fontWeight: 'bold'}}>Jude</Text> Afolabi</ThemedText>
             <ThemedText>Major changes</ThemedText>
-            <Link style={styles.link} href="/about"> <ThemedText style={{color: 'skyblue'}}>About Page</ThemedText> </Link>
-            <Link style={styles.link} href="/contact"> <ThemedText style={{color: 'skyblue'}}>Contact Page</ThemedText> </Link>
+            <Link style={styles.link} href="/login"> <ThemedText style={{color: 'skyblue'}}>Login Page</ThemedText> </Link>
+            <Link style={styles.link} href="/register"> <ThemedText style={{color: 'skyblue'}}>Register Page</ThemedText> </Link>
         </ThemedView>
     )
 }
