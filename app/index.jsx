@@ -17,6 +17,7 @@ const Home = () => {
             <ThemedText>Index <Text style={{fontWeight: 'bold'}}>Jude</Text> Afolabi</ThemedText>
             <ThemedText>Major changes</ThemedText>
             <Link style={styles.link} href="/login"> <ThemedText style={{color: 'skyblue'}}>Login Page</ThemedText> </Link>
+            <Link style={styles.link} href="/profile"> <ThemedText style={{color: 'skyblue'}}>Dashboard Page</ThemedText> </Link>
             <Link style={styles.link} href="/register"> <ThemedText style={{color: 'skyblue'}}>Register Page</ThemedText> </Link>
         </ThemedView>
     )

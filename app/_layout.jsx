@@ -3,6 +3,7 @@ import React from 'react'
 import { Stack } from "expo-router";
 import { Colors } from "../constants/Colors"
 import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const RootLayout = () => {
     const colorScheme = useColorScheme();
@@ -10,19 +11,22 @@ const RootLayout = () => {
 
     return (
         <>
-            <StatusBar style='auto'/>
-            <Stack
-                screenOptions={{
-                    headerStyle: {
-                        backgroundColor: theme.navBackground,
-                    },
-                    headerTintColor: theme.title,
-                }}
-            >
+            <SafeAreaProvider>
+                <StatusBar style='auto'/>
+                <Stack
+                    screenOptions={{
+                        headerStyle: {
+                            backgroundColor: theme.navBackground,
+                        },
+                        headerTintColor: theme.title,
+                    }}
+                >
 
-                <Stack.Screen name='index' options={{ title: 'Home' }}/>
-                <Stack.Screen name='(auth)' options={{ headerShown: false }}/>
-            </Stack>
+                    <Stack.Screen name='index' options={{ title: 'Home' }}/>
+                    <Stack.Screen name='(dashboard)' options={{ headerShown: false }}/>
+                    <Stack.Screen name='(auth)' options={{ headerShown: false }}/>
+                </Stack>
+            </SafeAreaProvider>
         </>
     )
 }
