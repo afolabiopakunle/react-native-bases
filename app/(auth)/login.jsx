@@ -6,10 +6,19 @@ import ThemedText from "../../components/ThemedText";
 import { Link } from "expo-router"
 import { Colors } from '../../constants/Colors'
 import ThemedButton from "../../components/ThemedButton";
+import ThemedTextInput from "../../components/ThemedTextInput";
+import { useState } from "react";
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     const handleSubmit = () => {
-        console.log('login button pressed!!!')
+        console.log('login button pressed!!!', email, password);
+        const trimmed = email.trim();
+        console.log({trimmed})
+        setEmail('');
+        setPassword('')
     }
 
     return (
@@ -23,13 +32,29 @@ const Login = () => {
                 <ThemedText style={{ textAlign: 'center' }}>Register</ThemedText>
             </Link>
 
-            <TextInput placeholder='Email' />
+            <ThemedTextInput
+                style={{width: '80%', marginBottom: 20}}
+                placeholder='Email'
+                keyboardType='email-address'
+                fontSize={18}
+                onChangeText={setEmail}
+                value={email}
+            />
 
-            <Spacer />
+            <ThemedTextInput
+                style={{width: '80%', marginBottom: 20}}
+                placeholder='Password'
+                fontSize={18}
+                onChangeText={setPassword}
+                value={password}
+                secureTextEntry
+            />
+
+            <Spacer/>
             <ThemedButton
                 onPress={handleSubmit}
-                >
-                <ThemedText style={{textAlign: 'center'}} >Login Pressable</ThemedText>
+            >
+                <ThemedText style={{ textAlign: 'center', color: '#fff' }}>Login</ThemedText>
             </ThemedButton>
         </ThemedView>
     )
