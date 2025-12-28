@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput } from 'react-native'
 
 import ThemedView from "../../components/ThemedView";
 import Spacer from "../../components/Spacer";
@@ -22,6 +22,8 @@ const Login = () => {
             <Link href="/register">
                 <ThemedText style={{ textAlign: 'center' }}>Register</ThemedText>
             </Link>
+
+            <TextInput placeholder='Email' />
 
             <Spacer />
             <ThemedButton
