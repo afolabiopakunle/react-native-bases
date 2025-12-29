@@ -7,18 +7,21 @@ import { Link } from "expo-router";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
 import { useState } from "react";
+import { useUser } from "../../hooks/useUser";
 
 const Register = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = () => {
-        console.log('login button pressed!!!', email, password);
-        const trimmed = email.trim();
-        console.log({ trimmed })
-        setEmail('');
-        setPassword('')
+    const { register } = useUser();
+
+    const handleSubmit = async () => {
+        try {
+            await register(email, password)
+        } catch (e) {
+
+        }
     }
 
     return (
