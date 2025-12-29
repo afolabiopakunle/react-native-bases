@@ -8,17 +8,21 @@ import { Colors } from '../../constants/Colors'
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
 import { useState } from "react";
+import { useUser } from "../../hooks/useUser";
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const { user } = useUser();
 
     const handleSubmit = () => {
         console.log('login button pressed!!!', email, password);
         const trimmed = email.trim();
         console.log({ trimmed })
         setEmail('');
-        setPassword('')
+        setPassword('');
+        console.log(user)
     }
 
     return (
