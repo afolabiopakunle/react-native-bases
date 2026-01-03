@@ -29,7 +29,8 @@ export function UserProvider({ children }) {
     }
 
     async function logout() {
-        setUser(null)
+        await account.deleteSessions();
+        setUser(null);
     }
 
     return (
