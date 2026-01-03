@@ -14,6 +14,7 @@ export function UserProvider({ children }) {
             setUser(response)
         } catch (error) {
             console.log(error)
+            throw Error(error)
         }
     }
 
@@ -23,6 +24,7 @@ export function UserProvider({ children }) {
             await login(email, password)
         } catch (error) {
             console.log(error)
+            throw Error(error)
         }
     }
 
